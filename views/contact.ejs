@@ -1,0 +1,111 @@
+<%- include('partials/header', { page: 'contact', title: 'Contact Us - America First Speakers' }) %>
+
+  <main class="container" tabindex="0">
+    <section class="quote-container">
+      <p class="quote-text">Let's Connect</p>
+    </section>
+
+    <section aria-label="Contact Form" style="max-width: 800px; margin: 0 auto;">
+      <h2 class="featured-title"><span class="navy">CONTACT</span> <span class="red">US</span></h2>
+
+      <% if (typeof success !== 'undefined' && success) { %>
+        <div style="background: #d4edda; border: 1px solid #c3e6cb; color: #155724; padding: 15px; border-radius: 6px; margin-bottom: 30px; text-align: center;">
+          <strong>Thank you for your message!</strong> We'll get back to you within 24 hours.
+        </div>
+      <% } %>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 50px;">
+        <div style="background: #FEFCF5; padding: 30px; border-radius: 8px;">
+          <h3 style="color: #0C2249; margin-bottom: 20px;">Get in Touch</h3>
+          <form action="/contact" method="POST">
+            <div style="margin-bottom: 20px;">
+              <label for="name" style="display: block; margin-bottom: 5px; font-weight: 700; color: #0C2249;">Name *</label>
+              <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-family: Georgia, serif;">
+            </div>
+            
+            <div style="margin-bottom: 20px;">
+              <label for="email" style="display: block; margin-bottom: 5px; font-weight: 700; color: #0C2249;">Email *</label>
+              <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-family: Georgia, serif;">
+            </div>
+            
+            <div style="margin-bottom: 20px;">
+              <label for="phone" style="display: block; margin-bottom: 5px; font-weight: 700; color: #0C2249;">Phone</label>
+              <input type="tel" id="phone" name="phone" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-family: Georgia, serif;">
+            </div>
+            
+            <div style="margin-bottom: 20px;">
+              <label for="event-type" style="display: block; margin-bottom: 5px; font-weight: 700; color: #0C2249;">Event Type</label>
+              <select id="event-type" name="eventType" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-family: Georgia, serif;">
+                <option value="">Select event type</option>
+                <option value="conference">Conference</option>
+                <option value="fundraiser">Fundraiser</option>
+                <option value="rally">Rally</option>
+                <option value="corporate">Corporate Event</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            
+            <div style="margin-bottom: 20px;">
+              <label for="message" style="display: block; margin-bottom: 5px; font-weight: 700; color: #0C2249;">Message *</label>
+              <textarea id="message" name="message" required rows="5" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-family: Georgia, serif; resize: vertical;"></textarea>
+            </div>
+            
+            <button type="submit" style="background: #B64A32; color: white; padding: 12px 30px; border: none; border-radius: 6px; font-weight: 700; cursor: pointer; font-size: 16px; font-family: Georgia, serif; transition: background 0.3s ease;">Send Message</button>
+          </form>
+        </div>
+        
+        <div>
+          <div style="background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-bottom: 30px;">
+            <h3 style="color: #0C2249; margin-bottom: 20px;">Contact Information</h3>
+            <div style="margin-bottom: 15px;">
+              <strong style="color: #0C2249;">Phone:</strong><br>
+              +1 (623) AMERICA<br>
+              <span style="font-size: 14px; color: #666;">+1 (623) 263-7422</span>
+            </div>
+            <div style="margin-bottom: 15px;">
+              <strong style="color: #0C2249;">Email:</strong><br>
+              <a href="mailto:howdy@americafirstspeakers.com" style="color: #B64A32;">howdy@americafirstspeakers.com</a>
+            </div>
+            <div style="margin-bottom: 15px;">
+              <strong style="color: #0C2249;">Office Hours:</strong><br>
+              Monday - Friday: 9:00 AM - 6:00 PM EST<br>
+              Saturday: 10:00 AM - 2:00 PM EST
+            </div>
+            <div>
+              <strong style="color: #0C2249;">Location:</strong><br>
+              Proudly based in Tennessee
+            </div>
+          </div>
+          
+          <div style="background: #0C2249; color: white; padding: 30px; border-radius: 8px;">
+            <h3 style="margin-bottom: 15px;">Quick Response Guarantee</h3>
+            <p style="line-height: 1.6;">We understand that timing is crucial for your events. That's why we guarantee a response within 24 hours for all inquiries.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Pre-fill speaker name if coming from speaker detail page
+    const urlParams = new URLSearchParams(window.location.search);
+    const speaker = urlParams.get('speaker');
+    const package = urlParams.get('package');
+    
+    if (speaker) {
+      document.getElementById('message').value = `I'm interested in booking ${speaker} for an upcoming event. Please provide availability and pricing information.`;
+    }
+    
+    if (package) {
+      const packageNames = {
+        'keynote': 'Keynote Speaker Package',
+        'panel': 'Panel Discussion Package',
+        'fullday': 'Full Day Event Package'
+      };
+      if (packageNames[package]) {
+        document.getElementById('message').value = `I'm interested in the ${packageNames[package]}. Please provide more information and a custom quote.`;
+      }
+    }
+  </script>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,29 @@
+<%- include('partials/header', { title: speaker.name + ' - America First Speakers' }) %>
+
+  <main class="container" tabindex="0">
+    <section style="max-width: 800px; margin: 40px auto;">
+      <div style="text-align: center; margin-bottom: 40px;">
+        <img src="<%= speaker.image %>" alt="<%= speaker.name %>" style="width: 300px; height: auto; border-radius: 8px; box-shadow: 0 4px 7px rgba(0,0,0,0.1);">
+      </div>
+      
+      <h1 style="font-weight: 900; font-size: 2.5rem; color: #0C2249; text-align: center; margin-bottom: 10px;"><%= speaker.name %></h1>
+      <p style="font-size: 1.2rem; color: #B64A32; text-align: center; margin-bottom: 30px; font-weight: 600;"><%= speaker.title %></p>
+      
+      <div style="background: #FEFCF5; padding: 30px; border-radius: 8px; border: 1px solid #e1e1e1;">
+        <h2 style="color: #0C2249; margin-bottom: 20px;">About <%= speaker.name %></h2>
+        <p style="line-height: 1.8; font-size: 1.1rem; color: #333;"><%= speaker.bio %></p>
+        
+        <div style="margin-top: 40px; padding-top: 30px; border-top: 1px solid #e1e1e1;">
+          <h3 style="color: #0C2249; margin-bottom: 20px;">Book <%= speaker.name %> for Your Event</h3>
+          <p style="margin-bottom: 20px;">Interested in having <%= speaker.name %> speak at your event? Contact us for availability and pricing.</p>
+          <a href="/contact?speaker=<%= speaker.name %>" style="display: inline-block; background: #B64A32; color: white; padding: 12px 30px; border-radius: 6px; font-weight: 700; text-decoration: none; transition: background 0.3s ease;">Request Booking</a>
+        </div>
+      </div>
+      
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="/speakers" style="color: #0C2249; font-weight: 600;">← Back to All Speakers</a>
+      </div>
+    </section>
+  </main>
+
+<%- include('partials/footer') %>

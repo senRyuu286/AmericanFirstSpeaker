@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title><%= typeof title !== 'undefined' ? title : 'America First Speakers' %></title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/main.js" defer></script>
+</head>
+<body>
+
+  <!-- Shared page container for header + nav so widths align -->
+  <div class="container top-shell">
+    <header class="top-header">
+      <div class="flag" aria-label="American flag with 13 red and white stripes and 50 white stars on blue field">
+        <a href="/">
+          <img src="/images/Flag.png"
+               alt="American flag with thirteen horizontal red and white stripes and blue canton containing fifty white stars" />
+        </a>
+      </div>
+
+      <div class="title-box" aria-label="America First Speakers Text">
+        <a href="/" style="color: inherit;">
+          AMERICA<br />FIRST<br /><span class="red">SPEAKERS</span>
+        </a>
+      </div>
+
+      <div class="contact-box" aria-label="Contact information and sign in sign up">
+        <div class="contact-row">
+          <div class="contact-label">Call Us</div>
+          <div class="contact-value">: +1 (623) AMERICA</div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-label">E-mail Us</div>
+          <div class="contact-value">: <a href="mailto:howdy@americafirstspeakers.com">howdy@americafirstspeakers.com</a></div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-label">Live Chat</div>
+          <div class="contact-value">: <a href="#" tabindex="0">Chat with us now</a></div>
+        </div>
+        <div class="contact-buttons">
+          <button class="contact-button button-signin" type="button" aria-label="Sign in button">SIGN IN</button>
+          <button class="contact-button button-signup" type="button" aria-label="Sign up button">SIGN UP</button>
+        </div>
+        <p class="proudly-text">Proudly based in good free Tennessee</p>
+      </div>
+    </header>
+
+    <!-- NAV now shares the same 3-column grid as the header -->
+    <nav class="main-nav" aria-label="Primary">
+      <ul class="nav-list">
+        <li><a class="<%= typeof page !== 'undefined' && page === 'home' ? 'active' : '' %>" href="/">HOME</a></li>
+        <li><a class="<%= typeof page !== 'undefined' && page === 'speakers' ? 'active' : '' %>" href="/speakers">SPEAKERS</a></li>
+        <li><a class="<%= typeof page !== 'undefined' && page === 'pricing' ? 'active' : '' %>" href="/pricing">PRICING</a></li>
+        <li><a class="<%= typeof page !== 'undefined' && page === 'about' ? 'active' : '' %>" href="/about">ABOUT</a></li>
+        <li><a class="<%= typeof page !== 'undefined' && page === 'contact' ? 'active' : '' %>" href="/contact">CONTACT</a></li>
+        <li><a class="<%= typeof page !== 'undefined' && page === 'video' ? 'active' : '' %>" href="/video-intro">VIDEO INTRO</a></li>
+      </ul>
+    </nav>
+  </div>

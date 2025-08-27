@@ -1,0 +1,28 @@
+<%- include('partials/header', { page: 'speakers', title: 'All Speakers - America First Speakers' }) %>
+
+  <main class="container" tabindex="0">
+    <section class="quote-container">
+      <p class="quote-text">Meet Our Distinguished Speakers</p>
+    </section>
+
+    <section aria-label="All Speakers">
+      <h2 class="featured-title"><span class="navy">ALL</span> <span class="red">SPEAKERS</span></h2>
+
+      <div class="speakers-grid" role="list">
+        <% speakers.forEach(speaker => { %>
+        <article class="speaker-card" role="listitem" aria-label="Speaker <%= speaker.name %>, <%= speaker.title %>">
+          <a href="/speaker/<%= speaker.id %>" style="text-decoration: none; color: inherit;">
+            <img class="speaker-photo" src="<%= speaker.image %>"
+                 alt="Portrait of <%= speaker.name %>" />
+            <div class="speaker-info">
+              <h3 class="speaker-name"><%= speaker.name %></h3>
+              <p class="speaker-desc"><%= speaker.title %></p>
+            </div>
+          </a>
+        </article>
+        <% }) %>
+      </div>
+    </section>
+  </main>
+
+<%- include('partials/footer') %>
