@@ -1,108 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>America First Speakers</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="America First Speakers - Conservative speakers for your next event. Inspiring patriotic values across America.">
+  <title>America First Speakers - Conservative Speakers Bureau</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Skip link for accessibility -->
+  <a href="#main" class="skip-link">Skip to main content</a>
 
-  <!-- Shared page container for header + nav so widths align -->
-  <div class="container top-shell">
-    <header class="top-header">
-      <div class="flag" aria-label="American flag with 13 red and white stripes and 50 white stars on blue field">
-        <img src="./lovable-uploads/Flag.png"
-             alt="American flag with thirteen horizontal red and white stripes and blue canton containing fifty white stars" />
+  <!-- Header with navigation -->
+  <header class="header" id="header">
+    <nav class="nav container" aria-label="Primary navigation">
+      <!-- Flag mark -->
+      <div class="flag-mark" aria-label="America First Speakers logo">
+        <div class="flag-square"></div>
       </div>
 
-      <div class="title-box" aria-label="America First Speakers Text">
-        AMERICA<br />FIRST<br /><span class="red">SPEAKERS</span>
-      </div>
-
-      <div class="contact-box" aria-label="Contact information and sign in sign up">
-        <div class="contact-row">
-          <div class="contact-label">Call Us</div>
-          <div class="contact-value">: +1 (623) AMERICA</div>
-        </div>
-        <div class="contact-row">
-          <div class="contact-label">E-mail Us</div>
-          <div class="contact-value">: <a href="mailto:howdy@americafirstspeakers.com">howdy@americafirstspeakers.com</a></div>
-        </div>
-        <div class="contact-row">
-          <div class="contact-label">Live Chat</div>
-          <div class="contact-value">: <a href="#" tabindex="0">Chat with us now</a></div>
-        </div>
-        <div class="contact-buttons">
-          <button class="contact-button button-signin" type="button" aria-label="Sign in button">SIGN IN</button>
-          <button class="contact-button button-signup" type="button" aria-label="Sign up button">SIGN UP</button>
-        </div>
-        <p class="proudly-text">Proudly based in good free Tennessee</p>
-      </div>
-    </header>
-
-    <!-- NAV now shares the same 3-column grid as the header -->
-    <nav class="main-nav" aria-label="Primary">
-      <ul class="nav-list">
-        <li><a class="active" href="#">HOME</a></li>
-        <li><a href="#">SPEAKERS</a></li>
-        <li><a href="#">PRICING</a></li>
-        <li><a href="#">ABOUT</a></li>
-        <li><a href="#">CONTACT</a></li>
-        <li><a href="#">VIDEO INTRO</a></li>
+      <!-- Navigation menu -->
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#speakers" class="nav-link">Speakers</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
-    </nav>
-  </div>
 
-  <main class="container" tabindex="0">
-    <section class="quote-container">
-      <p class="quote-text">Liberty’s microphone</p>
+      <!-- Mobile menu toggle -->
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Main content -->
+  <main id="main" class="main">
+    <!-- Hero section -->
+    <section class="hero container" id="home">
+      <div class="hero-content">
+        <h1 class="hero-title">Inspiring Conservative Values in America</h1>
+        <p class="hero-lede">Connect with America's most influential conservative voices. Our speakers bureau features trusted leaders who champion traditional values and constitutional principles.</p>
+        <button class="btn btn-primary" type="button">Book a Speaker</button>
+      </div>
+      <div class="hero-visual">
+        <div class="capitol-watermark" aria-hidden="true"></div>
+      </div>
     </section>
 
-    <section aria-label="Featured Speakers">
-      <h2 class="featured-title"><span class="navy">FEATURED</span> <span class="red">SPEAKERS</span></h2>
+    <!-- Featured Speakers section -->
+    <section class="featured-speakers container" id="speakers">
+      <h2 class="section-title">
+        <span class="title-featured">Featured</span>
+        <span class="title-speakers">Speakers</span>
+      </h2>
 
-      <div class="speakers-grid" role="list">
-        <!-- Speaker Cards (unchanged) -->
-        <article class="speaker-card" role="listitem" aria-label="Speaker Tucker Carlson, Founder and Host of The Tucker Carlson Show">
-          <img class="speaker-photo" src="./lovable-uploads/tucker.png"
-               alt="Portrait of Tucker Carlson smiling against a dark blue gradient background with a red ribbon corner" />
+      <div class="speakers-grid">
+        <article class="speaker-card">
+          <figure class="speaker-image">
+            <img src="./lovable-uploads/tucker.png" 
+                 alt="Tucker Carlson, conservative media personality" 
+                 width="240" 
+                 height="320"
+                 loading="lazy">
+          </figure>
           <div class="speaker-info">
             <h3 class="speaker-name">Tucker Carlson</h3>
-            <p class="speaker-desc">Founder and Host of The Tucker Carlson Show</p>
+            <p class="speaker-role">Founder and Host of The Tucker Carlson Show</p>
           </div>
         </article>
-        <article class="speaker-card" role="listitem" aria-label="Speaker Tucker Carlson, Founder and Host of The Tucker Carlson Show">
-          <img class="speaker-photo" src="./lovable-uploads/tucker.png"
-               alt="Portrait of Tucker Carlson smiling against a dark blue gradient background with a red ribbon corner" />
+
+        <article class="speaker-card">
+          <figure class="speaker-image">
+            <div class="speaker-placeholder" aria-label="Speaker portrait placeholder"></div>
+          </figure>
           <div class="speaker-info">
-            <h3 class="speaker-name">Tucker Carlson</h3>
-            <p class="speaker-desc">Founder and Host of The Tucker Carlson Show</p>
+            <h3 class="speaker-name">Sarah Mitchell</h3>
+            <p class="speaker-role">Constitutional Law Expert & Author</p>
           </div>
         </article>
-        <article class="speaker-card" role="listitem" aria-label="Speaker Tucker Carlson, Founder and Host of The Tucker Carlson Show">
-          <img class="speaker-photo" src="./lovable-uploads/tucker.png"
-               alt="Portrait of Tucker Carlson smiling against a dark blue gradient background with a red ribbon corner" />
+
+        <article class="speaker-card">
+          <figure class="speaker-image">
+            <div class="speaker-placeholder" aria-label="Speaker portrait placeholder"></div>
+          </figure>
           <div class="speaker-info">
-            <h3 class="speaker-name">Tucker Carlson</h3>
-            <p class="speaker-desc">Founder and Host of The Tucker Carlson Show</p>
-          </div>
-        </article>
-        <article class="speaker-card" role="listitem" aria-label="Speaker Tucker Carlson, Founder and Host of The Tucker Carlson Show">
-          <img class="speaker-photo" src="./lovable-uploads/tucker.png"
-               alt="Portrait of Tucker Carlson smiling against a dark blue gradient background with a red ribbon corner" />
-          <div class="speaker-info">
-            <h3 class="speaker-name">Tucker Carlson</h3>
-            <p class="speaker-desc">Founder and Host of The Tucker Carlson Show</p>
+            <h3 class="speaker-name">Robert Hayes</h3>
+            <p class="speaker-role">Former State Representative & Policy Advocate</p>
           </div>
         </article>
       </div>
 
-      <div class="view-all-btn-container">
-        <button class="view-all-btn" type="button" aria-label="View all speakers button">View All Speakers</button>
+      <div class="view-all-container">
+        <button class="btn btn-secondary" type="button">View All Speakers</button>
+      </div>
+    </section>
+
+    <!-- CTA Band -->
+    <section class="cta-band">
+      <div class="container">
+        <div class="cta-content">
+          <h2 class="cta-title">Make Fundraising Entertaining Again</h2>
+          <div class="cta-stars" aria-hidden="true">
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <p class="footer-brand">America First Speakers</p>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="#privacy" class="footer-link">Privacy</a>
+          <a href="#terms" class="footer-link">Terms</a>
+          <a href="#contact" class="footer-link">Contact</a>
+        </nav>
+      </div>
+      <p class="footer-tagline">Proudly based in Tennessee</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>
