@@ -129,8 +129,8 @@ nav img{
 .hero{
   position: relative;
   isolation: isolate;          /* so the ::after overlay stays behind text */
-  background-image: url(/lovable-uploads/bg.png);
-  background: url(/lovable-uploads/bg.png);
+  background-image: url(./lovable-uploads/bg.png);
+  background: url(./lovable-uploads/bg.png);
   box-sizing: border-box;
   background-size: cover;
         background-position: center; /* Centers the image within the element */
