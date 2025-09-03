@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Poppins', sans-serif; */
     /* background: linear-gradient(rgba(255, 243, 229, 0.7)); */
 }
 body{
@@ -28,6 +28,7 @@ nav img{
 .nav-links{
     flex: 1;
     text-align: right;
+    font-family: poppins;
 }
 
 .nav-links ul li{
@@ -158,17 +159,30 @@ nav img{
   pointer-events:none;
 }
 
+
+.brand-name{
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight:700;
+  font-size: 20px;
+  letter-spacing:.02em;
+  color:#0C2249;
+  white-space:nowrap;  
+        /* keeps it on one line */
+}
+
+
 /* Content container */
 .hero-inner{
   max-width: 1100px;
   width: min(95vw, 1100px);
   margin-inline: auto;
+  text-align: left;
 }
 
 /* Headline */
 .hero-title{
   font-family: Georgia, "Times New Roman", serif;
-  color: var(--navy);
+  color:#0C2249;
   font-weight: 700;
   line-height: 1.04;
   letter-spacing: .3px;
@@ -176,6 +190,7 @@ nav img{
   max-width: 12ch;                /* forces that tall stacked look */
   text-wrap: balance;
   margin: 0 0 1.2rem 0;
+  text-align: left;
 }
 
 /* CTA button */
@@ -189,6 +204,7 @@ nav img{
   box-shadow: 0 6px 16px rgba(12,34,73,.18);
   border: 1px solid rgba(12,34,73,.06);
   text-decoration: none;
+  align-content: start;
 }
 
 
