@@ -23,25 +23,28 @@ nav{
     justify-content: space-between;
 }
 nav img{
-    width: 150px;
+    width: 250px;
 }
 .nav-links{
     flex: 1;
-    text-align: right;
+    text-align: end;
     font-family: poppins;
 }
-
 .nav-links ul li{
     list-style: none;
     display: inline-block;
     padding: 8px 12px;
-    position: relative;
+    /* position: relative; */
+    /* align-self: start;
+    justify-content: left; */
+    /* align-items: center; */
 }
 
 .nav-links ul li a{
     color: #000;
     text-decoration: none;
     font-size: 20px;
+    text-align: center;
 }
 
 .nav-links ul li::after{
@@ -166,20 +169,49 @@ nav img{
 .brand-name{
   font-family: Georgia, "Times New Roman", serif;
   font-weight:700;
-  font-size: 20px;
+  font-size: 25px;
   letter-spacing:.02em;
   color:#0C2249;
-  white-space:nowrap;  
+  margin-bottom: 20px;
+  /* white-space:nowrap;   */
         /* keeps it on one line */
 }
+.brand{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  align-items:stretch;          /* make the title match the flag's height */
+  column-gap: 14px;
+}
 
+.flag{
+  height: var(--flag-h);
+  width:auto;
+  display:block;
+}
 
+.stack{
+  margin:0;                     /* remove default h1 margins (important!) */
+  height: var(--flag-h);        /* same height as the flag */
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;/* puts 1st line at top, last at bottom */
+  line-height:1;                /* tighter so edges line up cleanly */
+  font: 700 clamp(18px, 2vw, 28px) Georgia, "Times New Roman", serif;
+  color:#0C2249;
+}
+
+.stack > span{ display:block; }
+
+/* Optional: responsive flag size */
+@media (max-width:720px){
+  :root{ --flag-h: 90px; }
+}
 /* Content container */
 .hero-inner{
   max-width: 1100px;
   width: min(95vw, 1100px);
   margin-inline: auto;
-  text-align: left;
+  margin-top: 100px;
 }
 
 /* Headline */
@@ -187,15 +219,62 @@ nav img{
   font-family: Georgia, "Times New Roman", serif;
   color:#0C2249;
   font-weight: 700;
-  line-height: 1.04;
+  line-height: 2.04;
   letter-spacing: .3px;
-  font-size: clamp(1.5rem, 4vw + .5rem, 3.5rem);
-  max-width: 12ch;                /* forces that tall stacked look */
+  font-size: clamp(1.5rem, 4vw + .5rem, 3.5rem);              /* forces that tall stacked look */
   text-wrap: balance;
   margin: 0 0 1.2rem 0;
-  text-align: left;
+}
+.main-nav{
+  display:inline-block;      /* puts contact under the links */   
+  text-align: end;           /* space between links and contact */
+}
+.nav-list{
+  display:inline-block;
+  gap:3rem;
+  list-style:none;
+  /* text-align: end; */
+}
+.nav-list a{
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  font-weight:600;
+  color:#111;
+  text-decoration:none;
+}
+/* tiny underline for active link (like your screenshot) */
+.nav-list a.active::after{
+  content:"";
+  position:absolute;
+  left:50%; transform:translateX(-50%);
+  bottom:-.65rem;
+  width:18px; height:2px; border-radius:2px;
+  background:currentColor;
 }
 
+/* contact line */
+.nav-contact{
+  font-style:normal;            /* keep from italicizing <address> */
+  font-size:.95rem;
+  opacity:.85;
+  gap:.75rem;
+  display:inline-flex;
+  margin-left:2.5rem;
+  /* align-items: end; */
+}
+.nav-contact a{
+   color:inherit; 
+   text-decoration:none; 
+  }
+.nav-contact .dot{ 
+  opacity:.45; 
+}
+
+/* Mobile tweaks */
+@media (max-width:768px){
+  .nav-list{ gap:1.25rem; flex-wrap:wrap; justify-content:center; }
+  .nav-contact{ font-size:.9rem; }
+}
 /* CTA button */
 .hero-cta{
   display:inline-block;
