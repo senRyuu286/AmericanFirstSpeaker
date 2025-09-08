@@ -24,4 +24,22 @@ document.addEventListener("DOMContentLoaded", function(event){
             }
         }
     });
-});                     
+
+    const scrollingtext = document.querySelector('.slideshow-text');
+    let scrollAmount = 0;
+
+    setInterval(() => {
+        
+        scrollAmount += 5;
+
+        if (scrollAmount >= scrollingtext.scrollWidth) {
+            console.log("reset");
+            scrollAmount = 0;
+        }
+        console.log(scrollAmount);
+        scrollingtext.scrollLeft = scrollAmount;
+    }, 20);
+
+
+});
+
